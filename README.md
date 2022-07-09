@@ -22,3 +22,24 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+1. create app
+rails new imageMatch --webpack=react --database=postgresql
+
+2. config db/ variables etc
+
+3. rails db:create
+
+4. start server, check localhost:300
+
+5. create a controller, action, route, views (views can be left alone and empty)
+
+6. Add js_pack_tag pointing to the entrypoint- ex index.jsx into application.html.erb
+
+7. add yarn start scripts into package.json, then yarn start
+
+8. refresh page check contents of index.jsx is rendered
+
+9. add puppeteer (https://developer.chrome.com/docs/puppeteer/get-started/)
+  (https://javascript.plainenglish.io/scraping-for-images-using-puppeteer-9a3700bd5a2d)
