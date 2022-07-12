@@ -43,3 +43,9 @@ rails new imageMatch --webpack=react --database=postgresql
 
 9. add puppeteer (https://developer.chrome.com/docs/puppeteer/get-started/)
   (https://javascript.plainenglish.io/scraping-for-images-using-puppeteer-9a3700bd5a2d)
+
+10. create a new pack/entry point with scripts
+
+11. call it from controller
+
+12. add axios and create api calls
