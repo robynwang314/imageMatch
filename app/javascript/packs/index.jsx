@@ -25,3 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(document.createElement('div')),
   )
 })
+
+
+// // accept a name for example and a domNode where to render
+// function renderIt(domNode) {
+//   render(<App name={"React"} />, domNode);
+// }
+
+// window.renderIt = renderIt;
