@@ -8,7 +8,7 @@ class MainController < ApplicationController
   end
 
   def reverse_image_url_search
-    system("node app/javascript/puppeteerScreenshot.js #{Shellwords.escape("https://google.com")} #{Shellwords.escape(params[:image_url])}")
+    system("node app/javascript/puppeteerScreenshot.js #{Shellwords.escape(params[:website_url])} #{Shellwords.escape(params[:image_url])}")
   end
 
 end
