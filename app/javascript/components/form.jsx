@@ -6,14 +6,22 @@ import api from "../api.js"
 const ImageUrlForm = () => {
   const [imageURL, setImageURL] = React.useState("")
   const [websiteURL, setWebsiteURL] = React.useState("")
+  const [imageFile, setImageFile] = React.useState(null)
 
   function handleSubmit(e) {
     e.preventDefault()
 
-    if (imageURL.length > 0 || websiteURL > 0) {
-      let data = { image_url: imageURL, website_url: websiteURL }
-      return api.search.reverse_image_url(data)
+    // if (websiteURL.length > 0 && imageURL.length > 0) {
+    //   let data = { website_url: websiteURL, image_url: imageURL }
 
+    //   return api.search.reverse_image_url(data)
+    // }
+
+    if (websiteURL.length > 0 && imageFile) {
+      let data = { image_file: imageFile }
+      // console.log(imageFile)
+
+      return api.search.create(data)
     }
   }
 
@@ -30,6 +38,10 @@ const ImageUrlForm = () => {
         {"Image Url: "}
       </label>
       <input name="image_url" type="text" onChange={e => { setImageURL(e.target.value) }} />
+
+      <br />
+      <br />
+      <input type="file" accept="image/*" multiple={false} onChange={e => setImageFile(e.target.files[0])} />
 
       <br />
       <br />

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'main#index'
   # get '*path', to: 'main#index', via: :all
 
-  post '/search_by_url', to: 'main#reverse_image_url_search'
-
+  
+  get "/image", to: 'images#index'
+  post "/image", to: 'images#create'
+  post '/search_by_url', to: 'images#reverse_image_url_search'
 end
