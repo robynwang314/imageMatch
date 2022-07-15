@@ -9,6 +9,7 @@
     "@rails/webpacker": "5.4.3",
     "axios": "^0.27.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "object-to-formdata": "^4.4.2",
     "prop-types": "^15.8.1",
     "puppeteer": "^15.3.2",
     "puppeteer-extra": "^3.3.4",

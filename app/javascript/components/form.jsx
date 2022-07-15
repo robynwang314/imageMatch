@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import api from "../api.js"
+import { serialize } from 'object-to-formdata';
 
 
 const ImageUrlForm = () => {
@@ -17,12 +18,12 @@ const ImageUrlForm = () => {
     //   return api.search.reverse_image_url(data)
     // }
 
-    if (websiteURL.length > 0 && imageFile) {
-      let data = { image_file: imageFile }
-      // console.log(imageFile)
+    // if (websiteURL.length > 0 && imageFile) {
+    let data = { image_file: imageFile }
+    // console.log(imageFile)
 
-      return api.search.create(data)
-    }
+    return api.search.create(serialize(data))
+    // }
   }
 
 
