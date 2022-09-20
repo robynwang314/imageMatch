@@ -12,17 +12,17 @@ const ImageUrlForm = () => {
   function handleSubmit(e) {
     e.preventDefault()
 
-    // if (websiteURL.length > 0 && imageURL.length > 0) {
-    //   let data = { website_url: websiteURL, image_url: imageURL }
+    if (websiteURL.length > 0 && imageURL.length > 0) {
+      let data = { website_url: websiteURL, image_url: imageURL }
 
-    //   return api.search.reverse_image_url(data)
-    // }
+      return api.search.reverse_image_url(data)
+    }
 
     // if (websiteURL.length > 0 && imageFile) {
-    let data = { image_file: imageFile }
-    // console.log(imageFile)
+    // let data = { image_file: imageFile }
+    // // console.log(imageFile)
 
-    return api.search.create(serialize(data))
+    // return api.search.create(serialize(data))
     // }
   }
 
