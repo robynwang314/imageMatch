@@ -15,8 +15,17 @@ const search = {
       dataType: "json",
       data
     });
+  },
+  create_image_file: data => {
+    return axios({
+      url: 'generate_image_file',
+      method: "PUT",
+      dataType: "json",
+      data
+    });
   }
 }
+
 
 const api = {
   search

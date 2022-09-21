@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get "/image", to: 'images#index'
   post "/image", to: 'images#create'
   post '/search_by_url', to: 'images#reverse_image_url_search'
+  put '/generate_image_file', to: 'images#generate_image_file_from_screenshot'
 end

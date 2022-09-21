@@ -96,13 +96,10 @@ const createPdf = async () => {
   } catch (err) {
     console.log(err.message);
   } finally {
-
     if (browser) {
       fs.writeFileSync("./window_location.json", JSON.stringify(windowHREF));
       console.log("File is created!");
       browser.close();
-
-
       // return "something"
     }
     process.exit();
