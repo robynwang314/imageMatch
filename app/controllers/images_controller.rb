@@ -61,3 +61,16 @@ respond_to :html, :json, :png
   end
 
 end
+
+
+# next steps: call puppeteerScreenshot.js
+# but instead of loading urls, load png file
+
+# need to figure out validations for if screenshot is already in active storage or to purge after each search
+
+# front end stuff
+# return search results
+
+
+# then... moving beyond google
+# match image on a given website
