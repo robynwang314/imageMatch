@@ -13,12 +13,59 @@ respond_to :html, :json, :png
     render json: @Image
   end 
 
+
+  
+######################## NEXT STEPS ############################
+
+# next steps: call puppeteerPng.js
+
+###### (A) FOR GOOGLE REVERSE IMAGE SEARCH:
+# instead of saving results as a screen shot
+# grab the full page html and parse results... ?
+# or grab the full page html, return the link of image with matching base URL from the one entered on webpage
+
+###### (B) FOR OTHER WEBSITES
+# try to see if theres an image matching tool like percy 
+# return the link of the matched image
+
+###### FURTHER DOWN THE LINE
+# expand functionality out to ticketmaster and such
+
+###### CLEAN UP
+# need to figure out validations for if screenshot is already in active storage or to purge after each search
+
+# front end stuff
+# return search results
+
+
+# then... moving beyond google
+# match image on a given website
+
+
+########## IN THEORY ##########
+# google
+# 1. user submits a website url
+# 2. user uploads a screen shot
+# 3. screenshot gets saved into db
+# 4. which gets transformed into a png_file that gets saved into the same directory as this project (stored_screenshot.png)
+# 5. call method (tbd) that calls something like 
+  # system("node app/javascript/puppeteerPng.js #{Shellwords.escape("https://lens.google.com/search?p")} #{Shellwords.escape("https://static01.nyt.com/images/2021/02/07/fashion/NEW-BLUE-1/NEW-BLUE-1-superJumbo.jpg")} #{Shellwords.escape("puppeteerPNG.pdf")}")
+# ^^ needs clean up on the params
+# and then that file generates a screenshot.(for right now)
+# then ideally, re (A) and (B) above
+
+######################## END NEXT STEPS ############################
+
+
+
+
   # def call_puppeteer_screenshot
-  #   system("node app/javascript/puppeteerScreenshot.js #{Shellwords.escape("https://google.com")} #{Shellwords.escape("https://static01.nyt.com/images/2021/02/07/fashion/NEW-BLUE-1/NEW-BLUE-1-superJumbo.jpg")} #{Shellwords.escape("puppeteer.pdf")}")
+  # system("node app/javascript/puppeteerPng.js #{Shellwords.escape("https://lens.google.com/search?p")} #{Shellwords.escape("https://static01.nyt.com/images/2021/02/07/fashion/NEW-BLUE-1/NEW-BLUE-1-superJumbo.jpg")} #{Shellwords.escape("puppeteerPNG.pdf")}")
 
     # respond_with(@Image, root: false, location: false, serializer: ImageSerializer)
   # end
 
+  # maybe use transform_screenshot_into_png_file
   def generate_image_file_from_screenshot
     # refer below:
     # https://stackoverflow.com/questions/58812500/httparty-response-get-image-and-convert-bytes-to-base64-image-data-url
@@ -62,15 +109,3 @@ respond_to :html, :json, :png
 
 end
 
-
-# next steps: call puppeteerScreenshot.js
-# but instead of loading urls, load png file
-
-# need to figure out validations for if screenshot is already in active storage or to purge after each search
-
-# front end stuff
-# return search results
-
-
-# then... moving beyond google
-# match image on a given website
